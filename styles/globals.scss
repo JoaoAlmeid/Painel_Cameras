@@ -1,0 +1,95 @@
+@use './variables' as *;
+
+// Reset básico
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-principal;
+  background-color: $cor-clara;
+  color: #222;
+  line-height: 1.6;
+
+  main {
+    padding: 2rem;
+  }
+}
+
+// Tipografia base
+h1, h2, h3, h4, h5, h6, p, span {
+  font-family: $font-principal;
+  color: inherit;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: $font-h1;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: $cor-primaria;
+}
+
+h2 {
+  font-size: $font-h2;
+  font-weight: 600;
+  margin-bottom: 0.875rem;
+  color: $cor-primaria;
+}
+
+h3 {
+  font-size: $font-h3;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: $cor-primaria;
+}
+
+h4 {
+  font-size: $font-h4;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: $cor-secundaria;
+}
+
+h5 {
+  font-size: $font-h5;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: $cor-secundaria;
+}
+
+h6 {
+  font-size: $font-h6;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: $cor-secundaria;
+}
+
+p {
+  font-size: $font-p;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: $cor-secundaria;
+}
+
+span {
+  font-size: $font-span;
+  font-weight: 400;
+  color: $cor-secundaria;
+}
+
+.MuiButton-text {
+  color: $cor-primaria !important;
+}
+
+.MuiButton-outlined {
+  color: $cor-primaria !important;
+  border-color: $cor-primaria !important;
+}
+
+.MuiButton-contained {
+  color: white !important;
+  background-color: $cor-primaria !important;
+}

@@ -1,0 +1,42 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+
+    .video {
+        filter: brightness(.2);
+    }
+  }
+
+  .cardInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #000;
+}
+
+.statusAtiva {
+  color: #2e7d32; // verde escuro
+  font-weight: 600;
+}
+
+.statusInativa {
+  color: #f57c00; // laranja
+  font-weight: 600;
+}

@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 960px;
+  width: 100%;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.status {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.active {
+  color: #2e7d32;
+}
+
+.inactive {
+  color: #c62828;
+}
+
+.video {
+  width: 100%;
+  border-radius: 0.75rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.alert {
+  margin: 2rem;
+}

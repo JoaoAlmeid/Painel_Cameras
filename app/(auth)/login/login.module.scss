@@ -1,0 +1,30 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .login {
+        box-shadow: 0 0 1rem #4567;
+        padding: 4rem 2rem;
+        border-radius: 15px;
+
+        .headerLogin {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+
+        .formLogin{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+    }
+}

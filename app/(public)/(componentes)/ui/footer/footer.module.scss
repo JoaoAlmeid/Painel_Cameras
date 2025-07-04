@@ -1,0 +1,24 @@
+.footer {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 2px #222;
+
+    .copy {
+        font-size: .8rem;
+        font-weight: 300;
+    }
+
+    .dev {
+        font-size: .75rem;
+        font-weight: 400;
+        display: flex;
+        gap: 2px;
+    }
+}

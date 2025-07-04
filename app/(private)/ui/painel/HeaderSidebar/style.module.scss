@@ -1,0 +1,150 @@
+@use '../../../../../styles/variables' as *;
+
+$drawer-width: 240px;
+$drawer-width-collapsed: 64px;
+$transition-duration: 0.3s;
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.drawer {
+  background-color: $cor-clara;
+  color: $cor-primaria;
+  overflow-x: hidden;
+  transition: width $transition-duration ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 1px inset $cor-primaria;
+
+  &.open {
+    width: $drawer-width;
+    min-width: $drawer-width;
+  }
+
+  &.closed {
+    width: $drawer-width-collapsed;
+    min-width: $drawer-width-collapsed;
+
+    .iconToggle {
+      display: none;
+    }
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    width: 100%;
+    height: 7vh;
+    box-shadow: 0 0 1px $cor-primaria;
+
+    .logoArea {
+      display: flex;
+      align-items: center;
+
+      .logo img {
+        transition: width 0.3s ease;;
+      }
+    }
+
+    .iconToggle {
+      font-size: 1rem;
+      color: $cor-primaria;
+    }
+  }
+
+  .menu {
+    flex-grow: 1;
+    padding: 0;
+    margin-top: 20px;
+
+    .menuItem {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+      
+
+      &.hide {
+        justify-content: center;
+      }
+
+      &:hover {
+        background-color: $cor-primaria;
+        color: $cor-clara;
+
+        .icon, .label {
+          color: $cor-clara;
+        }
+      }
+
+      .icon {
+        display: flex;
+        justify-content: center;
+        width: 1.1rem;
+        color: $cor-primaria;
+      }
+
+      .label {
+        white-space: nowrap;
+        transition: opacity $transition-duration ease;
+        color: $cor-secundaria;
+
+        &.hide {
+          opacity: 0;
+          width: 0;
+          overflow: hidden;
+        }
+
+        &.show {
+          opacity: 1;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+.main {
+  flex-grow: 1;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+
+  .appBar {
+    display: flex;
+    align-items: center;
+    min-height: 7vh;
+    height: 7vh;
+    padding: 0 20px;
+    gap: 20px;
+    background-color: $cor-primaria;
+    color: white;
+
+    .iconToggle {
+      margin-right: 16px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 0;
+      color: #f9f9f9;
+    }
+  }
+
+  .content {
+    padding: 24px;
+  }
+}

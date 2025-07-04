@@ -1,0 +1,12 @@
+@use '../../../../../styles/variables' as *;
+
+.header {
+    background: #fff !important;
+    display: flex;
+    justify-content: center;
+    height: 8vh;
+
+    .icon {
+        color: $cor-primaria;
+    }
+}

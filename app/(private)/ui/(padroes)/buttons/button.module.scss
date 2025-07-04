@@ -1,0 +1,19 @@
+@use '../../../../../styles/variables' as *;
+
+.botao {
+  background-color: $cor-primaria;
+  color: white;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: .85rem;
+  transition: background-color 0.2s ease;
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+}

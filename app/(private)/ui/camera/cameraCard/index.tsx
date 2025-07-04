@@ -1,0 +1,78 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
+import { Card, CardContent, Typography, CardActions, IconButton, Tooltip } from '@mui/material'
+import { Visibility, Edit, Delete, PowerSettingsNew } from '@mui/.icons-material-vjRVHZ9z'
+import Hls from 'hls.js'
+import Link from 'next/link'
+import styles from './card.module.scss'
+import { Camera } from '@/types/camera'
+
+interface Props {
+  camera: Camera
+  onEdit: (cam: Camera) => void
+  onDelete: (cam: Camera) => void
+  onToggleAtivo: (cam: Camera) => void
+}
+
+function gerarSlug(nome: string): string {
+  return nome
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]+/g, '')
+    .replace(/--+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+export default function CameraCard({ camera, onEdit, onDelete, onToggleAtivo }: Props) {
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+
+  useEffect(() => {
+    if (camera.url && videoRef.current && Hls.isSupported()) {
+      const slug = gerarSlug(camera.nome)
+      const hlsUrl = `${process.env.NEXT_PUBLIC_BACKEND_URL}/stream/${slug}/video.m3u8`
+
+      const hls = new Hls()
+      hls.loadSource(hlsUrl)
+      hls.attachMedia(videoRef.current)
+      return () => hls.destroy()
+    }
+  }, [camera])
+
+  return (
+    <Card className={styles.card}>
+      <video
+        ref={videoRef}
+        muted
+        autoPlay
+        playsInline
+        className={styles.video}
+      />
+
+      <CardContent>
+        <Typography variant="h6">{camera.nome}</Typography>
+        <Typography
+          variant="body2"
+          className={camera.ativo ? styles.statusAtiva : styles.statusInativa}
+        >
+          Status: {camera.ativo ? 'Ativa' : 'Inativa'}
+        </Typography>
+      </CardContent>
+
+      <CardActions>
+        <Link href={`/painel/cameras/${camera.cameraId}`} passHref>
+          <IconButton><Visibility /></IconButton>
+        </Link>
+        <Tooltip title={camera.ativo ? 'Desativar' : 'Ativar'}>
+          <IconButton onClick={() => onToggleAtivo(camera)} color={camera.ativo ? 'success' : 'error'}>
+            <PowerSettingsNew />
+          </IconButton>
+        </Tooltip>
+        <IconButton onClick={() => onEdit(camera)}><Edit /></IconButton>
+        <IconButton color="error" onClick={() => onDelete(camera)}><Delete /></IconButton>
+      </CardActions>
+    </Card>
+  )
+}
