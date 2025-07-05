@@ -1,9 +1,10 @@
 'use client'
 
 import { Card, CardContent, Typography, CardActions, IconButton, Avatar } from '@mui/material'
-import { Edit, Delete } from '@mui/.icons-material-vjRVHZ9z'
 import api from '@/utils/api'
 import { AdminCardProps } from '@/types/admins'
+import { FaEdit } from 'react-icons/fa'
+import { LuDelete } from 'react-icons/lu'
 
 export default function AdminCard({ admin, onRefresh, onEdit, superId }: AdminCardProps) {
   const handleDelete = async () => {
@@ -34,8 +35,8 @@ export default function AdminCard({ admin, onRefresh, onEdit, superId }: AdminCa
         <Typography variant="caption">{admin.nivel}</Typography>
       </CardContent>
       <CardActions>
-        <IconButton onClick={() => onEdit(admin)}><Edit /></IconButton>
-        <IconButton color="error" onClick={handleDelete}><Delete /></IconButton>
+        <IconButton onClick={() => onEdit(admin)}><FaEdit /></IconButton>
+        <IconButton color="error" onClick={handleDelete}><LuDelete /></IconButton>
       </CardActions>
     </Card>
   )

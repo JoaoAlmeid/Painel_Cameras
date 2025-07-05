@@ -2,11 +2,11 @@
 
 import { useEffect, useRef } from 'react'
 import { Card, CardContent, IconButton } from '@mui/material'
-import { Visibility } from '@mui/.icons-material-vjRVHZ9z'
 import Hls from 'hls.js'
 import Link from 'next/link'
 import styles from './card.module.scss'
 import type { Camera } from '@/types/camera'
+import { MdVisibility } from 'react-icons/md'
 
 function gerarSlug(nome: string): string {
   return nome
@@ -56,7 +56,7 @@ export default function CardCamClient({ camera } : {camera : Camera}) {
         </div>
         <div>
           <Link href={`/camera/${camera.cameraId}`} passHref>
-            <IconButton><Visibility /></IconButton>
+            <IconButton><MdVisibility /></IconButton>
           </Link>
         </div>
       </CardContent>

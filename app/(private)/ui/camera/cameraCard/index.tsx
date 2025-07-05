@@ -2,11 +2,11 @@
 
 import { useEffect, useRef } from 'react'
 import { Card, CardContent, Typography, CardActions, IconButton, Tooltip } from '@mui/material'
-import { Visibility, Edit, Delete, PowerSettingsNew } from '@mui/.icons-material-vjRVHZ9z'
 import Hls from 'hls.js'
 import Link from 'next/link'
 import styles from './card.module.scss'
 import { Camera } from '@/types/camera'
+import { MdDelete, MdEdit, MdPowerSettingsNew, MdVisibility } from 'react-icons/md'
 
 interface Props {
   camera: Camera
@@ -63,15 +63,15 @@ export default function CameraCard({ camera, onEdit, onDelete, onToggleAtivo }: 
 
       <CardActions>
         <Link href={`/painel/cameras/${camera.cameraId}`} passHref>
-          <IconButton><Visibility /></IconButton>
+          <IconButton><MdVisibility /></IconButton>
         </Link>
         <Tooltip title={camera.ativo ? 'Desativar' : 'Ativar'}>
           <IconButton onClick={() => onToggleAtivo(camera)} color={camera.ativo ? 'success' : 'error'}>
-            <PowerSettingsNew />
+            <MdPowerSettingsNew />
           </IconButton>
         </Tooltip>
-        <IconButton onClick={() => onEdit(camera)}><Edit /></IconButton>
-        <IconButton color="error" onClick={() => onDelete(camera)}><Delete /></IconButton>
+        <IconButton onClick={() => onEdit(camera)}><MdEdit /></IconButton>
+        <IconButton color="error" onClick={() => onDelete(camera)}><MdDelete /></IconButton>
       </CardActions>
     </Card>
   )
