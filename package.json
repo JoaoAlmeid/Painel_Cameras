@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "git pull && npm install && next build && pm2 restart painel-cameras"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

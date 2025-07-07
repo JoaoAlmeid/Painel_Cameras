@@ -6,6 +6,8 @@ export async function logout() {
   } catch (err) {
     console.error('Erro ao sair:', err)
   } finally {
-    window.location.href = '/login'
+    if (typeof window !== 'undefined') {
+      window.location.href = '/login'
+    }
   }
 }
