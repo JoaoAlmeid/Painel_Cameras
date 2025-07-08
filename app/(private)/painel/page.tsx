@@ -52,8 +52,8 @@ export default function PainelPage() {
         <Alert severity="error">{erro}</Alert>
       ) : (
         <div>
-          <Grid container spacing={2} className={styles.resumo}>
-            <Grid size={{ xs: 12, md: 4 }}>
+          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} className={styles.resumo}>
+            <Grid size={{ xs: 12, sm: 4, md: 4 }}>
               <Card sx={{ backgroundColor: '#e3f2fd' }}>
                 <CardContent>
                   <LuGalleryHorizontalEnd color="primary" fontSize="large" />
@@ -63,7 +63,7 @@ export default function PainelPage() {
               </Card>
             </Grid>
 
-            <Grid size={{ xs: 12, md: 4 }}>
+            <Grid size={{ xs: 12, sm: 4, md: 4 }}>
               <Card sx={{ backgroundColor: '#e8f5e9' }}>
                 <CardContent>
                   <LuCamera color="success" fontSize="large" />
@@ -73,7 +73,7 @@ export default function PainelPage() {
               </Card>
             </Grid>
 
-            <Grid size={{ xs: 12, md: 4 }}>
+            <Grid size={{ xs: 12, sm: 4, md: 4 }}>
               <Card sx={{ backgroundColor: '#ffebee' }}>
                 <CardContent>
                   <LuCameraOff color="error" fontSize="large" />
@@ -84,9 +84,9 @@ export default function PainelPage() {
             </Grid>
           </Grid>
 
-          <Grid container spacing={3}>
+          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {/* MAPA */}
-            <Grid size={{ xs: 12, md: 8 }}>
+            <Grid size={{ xs: 2, sm: 4, md: 8 }}>
               <div>
                 <h6>Mapa das Câmeras</h6>
                 <div className={styles.mapContainer}>
@@ -96,7 +96,7 @@ export default function PainelPage() {
             </Grid>
 
             {/* LISTA */}
-            <Grid size={{ xs: 12, md: 4 }}>
+            <Grid size={{ xs: 2, sm: 4, md: 4 }}>
               <h6>Lista de Câmeras</h6>
               <div className={styles.lista}>
                 {Array.isArray(cameras) &&
