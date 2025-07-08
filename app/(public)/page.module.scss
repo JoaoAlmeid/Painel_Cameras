@@ -2,9 +2,10 @@
     display: flex;
     padding: 2rem;
     gap: 30px;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
 
-    @media (max-width: 600px) {
+    @media (max-width: 762px) {
+        flex-wrap: wrap;
         flex-direction: column-reverse;
     }
 
@@ -13,12 +14,20 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+
+        @media (max-width: 762px) {
+            width: 100%;
+        }
     }
     .columCams {
         width: 50%;
         display: flex;
         flex-direction: column;
         gap: 1rem;
+
+        @media (max-width: 762px) {
+            width: 100%;
+        }
 
         .headerCams {
             display: flex;
