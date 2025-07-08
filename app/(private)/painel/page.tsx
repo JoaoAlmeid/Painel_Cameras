@@ -3,13 +3,13 @@
 import { useEffect, useState } from 'react'
 import styles from './page.module.scss'
 import {
-  Grid,
   CircularProgress,
   Alert,
   Button,
   Card,
   CardContent,
 } from '@mui/material'
+import Grid from '@mui/material/Grid';
 import api from '@/utils/api'
 import type { Camera, ListaCamerasResponse } from '@/types/camera'
 import dynamic from 'next/dynamic'
@@ -53,7 +53,7 @@ export default function PainelPage() {
       ) : (
         <div>
           <Grid container spacing={2} className={styles.resumo}>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Card sx={{ backgroundColor: '#e3f2fd' }}>
                 <CardContent>
                   <LuGalleryHorizontalEnd color="primary" fontSize="large" />
@@ -63,7 +63,7 @@ export default function PainelPage() {
               </Card>
             </Grid>
 
-            <Grid size={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Card sx={{ backgroundColor: '#e8f5e9' }}>
                 <CardContent>
                   <LuCamera color="success" fontSize="large" />
@@ -73,7 +73,7 @@ export default function PainelPage() {
               </Card>
             </Grid>
 
-            <Grid size={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Card sx={{ backgroundColor: '#ffebee' }}>
                 <CardContent>
                   <LuCameraOff color="error" fontSize="large" />
@@ -86,7 +86,7 @@ export default function PainelPage() {
 
           <Grid container spacing={3}>
             {/* MAPA */}
-            <Grid size={8}>
+            <Grid size={{ xs: 12, md: 8 }}>
               <div>
                 <h6>Mapa das Câmeras</h6>
                 <div className={styles.mapContainer}>
@@ -96,7 +96,7 @@ export default function PainelPage() {
             </Grid>
 
             {/* LISTA */}
-            <Grid size={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <h6>Lista de Câmeras</h6>
               <div className={styles.lista}>
                 {Array.isArray(cameras) &&
