@@ -16,7 +16,7 @@ export default function Footer() {
         Desenvolvido por 
         <Link href='https://acrie.com.br' target='_blank'>
           <Image
-            src='/imagens/logo_Acrie.png'
+            src='/imagens/Logo_Acrie.png'
             alt='Logo Acrie'
             width={35}
             height={12}
