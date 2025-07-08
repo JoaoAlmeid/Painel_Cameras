@@ -41,7 +41,7 @@ export default function HomePage() {
       ) : erro ? (
         <Alert severity="error">{erro}</Alert>
       ) : Array.isArray(cameras) ? (
-        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} className={styles.container}>
           <Grid size={{ xs: 2, sm: 4, md: 8 }} className={styles.columMapa}>
             <h3>Mapa das câmeras</h3>
             <Grid container>
