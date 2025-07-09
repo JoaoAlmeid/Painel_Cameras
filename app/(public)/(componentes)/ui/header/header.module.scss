@@ -6,9 +6,9 @@
     justify-content: space-between;
     height: 8vh;
 
-    .col_left { width: 25%; }
+    .col_left { position: relative; width: 25%; }
     .col_middle { width: 50%; }
-    .col_right { width: 25%; }
+    .col_right { position: relative; width: 25%; }
 
     .icon, .icon_ouca {
         color: $cor-primaria;
@@ -28,16 +28,29 @@
         .col_left { width: 100%; }
         .col_middle { width: 100%; }
         .col_right { display: none; }
+
+        .icon_ouca {
+            position: fixed;
+            bottom: 8vh;
+            left: 1rem;
+            background-color: $cor-primaria;
+            color: #fff;
+            padding: .5rem;
+            border-radius: 100%;
+        }
     }
     .container_redes {
         background-color: $cor-primaria;
-        color: #fff;
         flex-direction: column;
         gap: .7rem;
         position: absolute;
-        top: 50%;
+        top: 40vh;
         right: 0;
         border-radius: 8px 0 8px 0;
         z-index: 999;
+
+        .icon {
+            color: #fff;
+        }
     }
 }
