@@ -40,6 +40,8 @@
 @media (max-width:65em) {
     .header {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         .col_left { 
             height: 0;
