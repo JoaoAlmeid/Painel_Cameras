@@ -10,4 +10,15 @@
     gap: 12px;
   }
 
+  .gridCameras {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 65em) {
+    .gridCameras {
+      grid-template-columns: 1fr;
+    }
 }

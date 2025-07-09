@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import {
   Typography,
-  Grid,
   CircularProgress,
 } from '@mui/material'
 import api from '@/utils/api'
@@ -51,7 +50,7 @@ export default function CamerasPage() {
         <h2>Lista de Câmeras</h2>
       </div>
 
-      <Grid container spacing={2}>
+      <div className={styles.gridCameras}>
         {cameras
             .filter(cam => cam.ativo)
             .map((cam) => (
@@ -60,7 +59,7 @@ export default function CamerasPage() {
                 camera={cam}
                 />
         ))}
-      </Grid>
+      </div>
     </div>
   )
 }
