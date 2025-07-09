@@ -13,7 +13,12 @@
     z-index: 9999;
 
     .col_left { width: 25%; }
-    .col_middle { width: 50%; }
+    .col_middle { 
+        width: 50%; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .col_right { width: 25%; }
 
     .icon, .icon_ouca {
@@ -24,7 +29,8 @@
 .container_redes {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: left;
+    gap: 20px;
 }
 
 @media (max-width:65em) {
@@ -34,16 +40,6 @@
         .col_left { width: 100%; }
         .col_middle { width: 100%; }
         .col_right { display: none; }
-
-        .icon_ouca {
-            position: absolute;
-            bottom: 8vh;
-            left: 30px;
-            background-color: $cor-primaria;
-            color: #fff;
-            padding: .5rem;
-            border-radius: 100%;
-        }
     }
     .container_redes {
         background-color: $cor-primaria;
