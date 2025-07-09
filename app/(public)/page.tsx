@@ -59,16 +59,14 @@ export default function HomePage() {
                 Todas as câmeras
               </Button>
             </div>
-            <div>
+            <div className={styles.gridCameras}>
               {cameras
                 .filter(cam => cam.ativo)
                 .slice(0, 4)
                 .map((cam) => (
-                  <div className={styles.gridCameras} key={cam.cameraId}>
-                    <CardCamClient
-                      camera={cam}
-                    />
-                  </div>
+                  <CardCamClient key={cam.cameraId}
+                    camera={cam}
+                  />
               ))}
             </div>
           </div>
