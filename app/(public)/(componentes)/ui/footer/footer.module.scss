@@ -30,7 +30,9 @@
 @media (max-width: 65em) {
     .footer {
         height: 80px;
-        margin-top: 80px;
+        margin-top: 100px;
         padding: 2rem 1rem;
+
+        .copy { text-align: center; }
     }
 }

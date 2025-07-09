@@ -55,7 +55,7 @@ export default function HomePage() {
           <div className={styles.columCams}>
             <div className={styles.headerCams}>
               <h3>Câmeras C-Com FM</h3>
-              <Button variant='text' href='/cameras'>
+              <Button variant='text' href='/camera/todas'>
                 Todas as câmeras
               </Button>
             </div>
