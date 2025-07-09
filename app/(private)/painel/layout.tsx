@@ -1,17 +1,10 @@
-import type { Metadata } from "next";
+import '../../../styles/globals.scss'
+import 'leaflet/dist/leaflet.css'
+import Head from "next/head";
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import SideBar from "../ui/painel/HeaderSidebar/Sidebar";
-import '../../../styles/globals.scss'
-import 'leaflet/dist/leaflet.css'
 
-export const metadata: Metadata = {
-  title: {
-    default: "Painel",
-    template: "%s | Painel"
-  },
-  description: "Painel de administração do sistema.",
-};
 
 export default async function PainelLayout({ children }: { children: React.ReactNode }) {
     const cookieStore = cookies();
@@ -23,6 +16,10 @@ export default async function PainelLayout({ children }: { children: React.React
 
     return (
       <html lang="pt-BR">
+        <Head>
+          <title>Painel | Câmeras C-Com</title>
+          <meta name="description" content="Painel de administração das câmeras" />
+        </Head>
         <body>
           <div>
               <SideBar>{children}</SideBar>

@@ -11,6 +11,8 @@ import styles from '../../../(private)/painel/cameras/page.module.scss'
 import type { Camera, ListaCamerasResponse } from '@/types/camera'
 import { isAxiosError } from 'axios'
 import CardCamClient from '../../(componentes)/ui/card/cameraCard'
+import Head from 'next/head'
+
 
 export default function CamerasPage() {
   const [cameras, setCameras] = useState<Camera[]>([])
@@ -46,6 +48,9 @@ export default function CamerasPage() {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Cameras C-Com FM</title>
+      </Head>
       <div className={styles.header}>
         <h2>Lista de Câmeras</h2>
       </div>

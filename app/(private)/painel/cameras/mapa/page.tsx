@@ -7,6 +7,7 @@ import { Camera } from '@/types/camera'
 import styles from './page.module.scss'
 import { isAxiosError } from 'axios'
 import dynamic from 'next/dynamic'
+import Head from 'next/head'
 
 const MapContainer = dynamic(() => import('../../../ui/camera/camerasMapa'), {
   ssr: false,
@@ -42,6 +43,9 @@ export default function MapaCamerasPage() {
 
   return (
     <div className={styles.container}>
+      <Head>
+          <title>Mapa Câmeras | Painel C-Com</title>
+      </Head>
       <div className={styles.header}>
         <h2>Mapa das Câmeras</h2>
 

@@ -17,6 +17,7 @@ import ModalAddCamera from '@/app/(private)/ui/painel/Modals/CameraModal'
 import type { Camera, ListaCamerasResponse } from '@/types/camera'
 import { isAxiosError } from 'axios'
 import CameraCard from '@/app/(private)/ui/camera/cameraCard'
+import Head from 'next/head'
 
 export default function CamerasPage() {
   const [cameras, setCameras] = useState<Camera[]>([])
@@ -74,6 +75,9 @@ export default function CamerasPage() {
 
   return (
     <div className={styles.container}>
+      <Head>
+          <title>Câmeras | Painel C-Com</title>
+      </Head>
       <div className={styles.header}>
         <h2>
           Lista de Câmeras

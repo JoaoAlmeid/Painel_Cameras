@@ -13,6 +13,7 @@ import styles from './page.module.scss'
 import { isAxiosError } from 'axios'
 import type { Admin, AdminListResponse } from '@/types/admins'
 import ModalAdmin from '@/app/(private)/ui/Admins/modalAdmin'
+import Head from 'next/head'
 
 export default function AdminsPage() {
   const [admins, setAdmins] = useState<Admin[]>([])
@@ -51,6 +52,9 @@ export default function AdminsPage() {
 
   return (
     <div className={styles.container}>
+      <Head>
+          <title>Administradores | Painel C-Com</title>
+      </Head>
       <div className={styles.header}>
         <h2>Administradores</h2>
 

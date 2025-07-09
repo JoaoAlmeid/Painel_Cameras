@@ -7,6 +7,7 @@ import api from '@/utils/api'
 import Hls from 'hls.js'
 import { isAxiosError } from 'axios'
 import styles from './page.module.scss'
+import Head from 'next/head'
 
 interface Camera {
   cameraId: string
@@ -76,6 +77,9 @@ export default function CameraPagina() {
 
   return (
     <div className={styles.container}>
+      <Head>
+          <title>`Câmera ${camera.nome} | Painel C-Com`</title>
+      </Head>
       <div className={styles.card}>
         <Typography variant="h4" className={styles.title}>{camera.nome}</Typography>
         <Typography variant="body1" className={styles.status}>

@@ -9,6 +9,7 @@ import { isAxiosError } from 'axios'
 import styles from '../../../../styles/paginas/camera.module.scss'
 import Link from 'next/link'
 import { MdReport } from "react-icons/md";
+import Head from 'next/head'
 
 interface Camera {
   cameraId: string
@@ -79,6 +80,9 @@ export default function CameraPagina() {
 
   return (
     <div className={styles.container}>
+        <Head>
+          <title>`Câmera ${camera.nome}`</title>
+        </Head>
         <div className={styles.columInfo}>
             <h2>{camera.nome}</h2>
             <span className={styles.status}>Status: 
