@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "git pull && npm install && npm run build && pm2 restart painel-cameras"
+    "deploy": "git pull && npm install && npm run build && pm2 restart frontend"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
