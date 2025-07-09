@@ -6,7 +6,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: auto 50px;
+    padding: auto 200px !important;
     position: sticky;
     top: 0;
     background: #fff !important;
@@ -41,7 +41,11 @@
         flex-direction: column;
 
         .col_left { width: 100%; }
-        .col_middle { width: 100%; }
+        .col_middle { 
+            width: 100%; 
+            padding: auto;
+            height: auto;
+        }
         .col_right { display: none; }
     }
     .container_redes {
