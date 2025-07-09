@@ -1,11 +1,16 @@
 @use '../../../../../styles/variables' as *;
 
 .header {
-    background: #fff !important;
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: #fff !important;
     height: 8vh;
+    z-index: 9999;
 
     .col_left { width: 25%; }
     .col_middle { width: 50%; }

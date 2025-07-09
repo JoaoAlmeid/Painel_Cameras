@@ -1,18 +1,18 @@
 'use client'
 
-import { AppBar, Button } from '@mui/material'
-import { FaHeadphonesAlt } from 'react-icons/fa'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './header.module.scss'
 import RedesSociaisRadio from './redesSociais'
+import { Button } from '@mui/material'
+import { FaHeadphonesAlt } from 'react-icons/fa'
 
 export default function Header() {
   const siteRadio = "https://ccomfm.com.br"
   const oucaAgora = "https://ccomfm.com.br/ao-vivo"
 
   return (
-    <AppBar position="sticky" className={styles.header} elevation={1}>
+    <header className={styles.header}>
       <div className={styles.col_right}>
         <Button 
           variant="text" 
@@ -36,6 +36,6 @@ export default function Header() {
       <div className={styles.col_left}>
         <RedesSociaisRadio />
       </div>
-    </AppBar>
+    </header>
   )
 }
