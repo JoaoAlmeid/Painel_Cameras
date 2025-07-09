@@ -62,6 +62,7 @@ export default function HomePage() {
             <div className={styles.gridCameras}>
               {cameras
                 .filter(cam => cam.ativo)
+                .sort(() => Math.random() - 0.5)
                 .slice(0, 4)
                 .map((cam) => (
                   <CardCamClient key={cam.cameraId}
