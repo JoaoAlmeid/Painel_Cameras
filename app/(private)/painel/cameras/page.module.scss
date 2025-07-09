@@ -20,6 +20,13 @@
 @media (max-width: 65em) {
   .container {
     padding: 1.5rem .5rem 5rem;
+    gap: 1rem;
+
+    h2 { 
+      font-size: 1.5rem; 
+      text-align: center; 
+    }
+    
     .gridCameras {
       grid-template-columns: 1fr;
     }
