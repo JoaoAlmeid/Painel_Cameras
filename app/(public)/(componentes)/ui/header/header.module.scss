@@ -6,6 +6,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: auto 50px;
     position: sticky;
     top: 0;
     background: #fff !important;
@@ -29,8 +30,10 @@
 .container_redes {
     display: flex;
     align-items: center;
-    justify-content: left;
-    gap: 20px;
+    justify-content: right;
+    gap: 12px;
+
+    .icon { font-size: 1.1rem; }
 }
 
 @media (max-width:65em) {
