@@ -36,9 +36,9 @@
         .col_right { display: none; }
 
         .icon_ouca {
-            position: fixed;
+            position: absolute;
             bottom: 8vh;
-            left: 1rem;
+            left: 30px;
             background-color: $cor-primaria;
             color: #fff;
             padding: .5rem;
@@ -48,15 +48,17 @@
     .container_redes {
         background-color: $cor-primaria;
         flex-direction: column;
+        padding: 15px 10px;
         gap: .7rem;
         position: absolute;
-        top: 40vh;
+        top: 30vh;
         right: 0;
         border-radius: 8px 0 8px 0;
         z-index: 999;
 
         .icon {
             color: #fff;
+            font-size: 1.1rem;
         }
     }
 }
