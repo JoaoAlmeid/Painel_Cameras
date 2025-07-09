@@ -3,12 +3,13 @@
 .header {
     background: #fff !important;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     height: 8vh;
 
-    .col_left { position: relative; width: 25%; }
+    .col_left { width: 25%; }
     .col_middle { width: 50%; }
-    .col_right { position: relative; width: 25%; }
+    .col_right { width: 25%; }
 
     .icon, .icon_ouca {
         color: $cor-primaria;
