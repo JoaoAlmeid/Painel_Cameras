@@ -21,7 +21,7 @@
     justify-content: space-between;
 }
 
-@media screen {
+@media (max-width:65em) {
     .header {
         flex-direction: column;
 
@@ -31,6 +31,7 @@
     }
     .container_redes {
         background-color: $cor-primaria;
+        color: #fff;
         flex-direction: column;
         gap: .7rem;
         position: absolute;
