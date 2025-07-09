@@ -6,8 +6,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
     position: sticky;
     top: 0;
     background: #fff !important;
@@ -41,7 +41,10 @@
     .header {
         flex-direction: column;
 
-        .col_left { width: 100%; }
+        .col_left { 
+            height: 0;
+            width: 100%;
+        }
         .col_middle { 
             width: 100%; 
             padding: auto;

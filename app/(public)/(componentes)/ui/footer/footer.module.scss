@@ -26,3 +26,11 @@
         gap: 2px;
     }
 }
+
+@media (max-width: 65em) {
+    .footer {
+        height: 80px;
+        margin-top: 80px;
+        padding: 2rem 1rem;
+    }
+}
