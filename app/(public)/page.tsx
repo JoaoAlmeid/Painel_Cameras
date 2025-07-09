@@ -41,8 +41,8 @@ export default function HomePage() {
       ) : erro ? (
         <Alert severity="error">{erro}</Alert>
       ) : Array.isArray(cameras) ? (
-        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} className={styles.container}>
-          <Grid size={{ xs: 2, sm: 4, md: 8 }} className={styles.columMapa}>
+        <div className={styles.container}>
+          <div className={styles.columMapa}>
             <h3>Mapa das câmeras</h3>
             <Grid container>
                   <Grid size={12}>
@@ -51,28 +51,28 @@ export default function HomePage() {
                     </div>
                   </Grid>
             </Grid>
-          </Grid>
-          <Grid size={{ xs: 2, sm: 4, md: 4 }} className={styles.columCams}>
+          </div>
+          <div className={styles.columCams}>
             <div className={styles.headerCams}>
               <h3>Câmeras C-Com FM</h3>
               <Button variant='text' href='/cameras'>
                 Todas as câmeras
               </Button>
             </div>
-            <Grid container spacing={2}>
+            <div>
               {cameras
                 .filter(cam => cam.ativo)
                 .slice(0, 4)
                 .map((cam) => (
-                  <Grid size={6} key={cam.cameraId}>
+                  <div className={styles.gridCameras} key={cam.cameraId}>
                     <CardCamClient
                       camera={cam}
                     />
-                  </Grid>
+                  </div>
               ))}
-            </Grid>
-          </Grid>
-        </Grid>
+            </div>
+          </div>
+        </div>
         ) : (
           <Alert severity='warning'>Nenhuma câmera encontrada</Alert>
         )}
