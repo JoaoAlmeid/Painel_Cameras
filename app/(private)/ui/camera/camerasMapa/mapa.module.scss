@@ -1,8 +1,12 @@
 .map {
-  min-height: 100%;
+  min-height: 67.5vh;
   height: auto;
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 0 8px #333;
+  
+  @media (max-width: 65em) {
+    min-height: 40vh;
+  }
 }
