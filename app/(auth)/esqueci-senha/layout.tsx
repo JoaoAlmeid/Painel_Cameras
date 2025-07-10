@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto, Poppins } from "next/font/google"
 import "../../../styles/globals.scss"
-import styles from './login.module.scss'
+import styles from '../login/login.module.scss'
 
 const roboto = Roboto({
   weight: ['300', '500', '600', '700'],
