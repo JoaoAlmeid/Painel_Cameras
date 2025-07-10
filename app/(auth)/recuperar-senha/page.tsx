@@ -9,7 +9,7 @@ import {
   CircularProgress,
 } from '@mui/material'
 import api from '@/utils/api'
-import styles from './recuperar.module.scss'
+import styles from './page.module.scss'
 
 export default function RedefinirSenhaPage() {
   const searchParams = useSearchParams()
