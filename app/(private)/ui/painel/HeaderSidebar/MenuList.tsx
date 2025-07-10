@@ -15,7 +15,7 @@ const menuItems = [
   { label: 'Painel', href: '/painel', icon: <FaHome /> },
   { label: 'Câmeras', href: '/painel/cameras', icon: <FaVideo /> },
   { label: 'Mapa', href: '/painel/cameras/mapa', icon: <FaMapMarkedAlt /> },
-  { label: 'Administradores', href: '/painel/admin/todos', icon: <FaUsers /> },
+  { label: 'Administradores', href: '/painel/admins', icon: <FaUsers /> },
 ]
 
 export default function ListMenu({ open }: DrawerMenuProps) {

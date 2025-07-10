@@ -75,18 +75,20 @@ export default function AdminsPage() {
         <Alert severity="error">{error}</Alert>
       ) : (
         <Grid container spacing={2}>
-          {admins.map((admin) => (
-            <Grid size={4} key={admin.adminId}>
-              <AdminCard
-                admin={admin}
-                onRefresh={carregarAdmins}
-                onEdit={(a) => {
-                  setAdminedit(a)
-                  setModalOpen(true)
-                }}
-                superId={criadoPorId}
-              />
-            </Grid>
+          {admins
+            .filter(admin => admin.nivel?.trim().toUpperCase() === 'SIMPLES')
+            .map((admin) => (
+              <Grid size={4} key={admin.adminId}>
+                <AdminCard
+                  admin={admin}
+                  onRefresh={carregarAdmins}
+                  onEdit={(a) => {
+                    setAdminedit(a)
+                    setModalOpen(true)
+                  }}
+                  superId={criadoPorId}
+                />
+              </Grid>
           ))}
         </Grid>
       )}
