@@ -98,14 +98,6 @@ export default function LoginPage() {
               onChange={(e) => setSenha(e.target.value)}
             />
           </FormControl>
-          <TextField
-            label="Senha"
-            variant="outlined"
-            fullWidth
-            type="password"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-          />
           <Button variant="contained" color="primary" onClick={login} sx={{ mt: 2 }}>
             Entrar
           </Button>
