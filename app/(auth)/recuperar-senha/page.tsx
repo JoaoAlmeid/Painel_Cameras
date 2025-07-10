@@ -1,6 +1,6 @@
 'use client'
 
-import { useSearchParams, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import {
   TextField,
@@ -11,9 +11,10 @@ import {
 import api from '@/utils/api'
 import styles from './page.module.scss'
 
-export default function RedefinirSenhaPage() {
-  const searchParams = useSearchParams()
-  const token = searchParams.get('token')
+export default function RedefinirSenhaPage(
+    { searchParams }: { searchParams: { token?: string } }) 
+{
+  const token = searchParams.token
   const router = useRouter()
 
   const [novaSenha, setNovaSenha] = useState('')
