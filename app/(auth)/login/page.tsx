@@ -1,21 +1,34 @@
 'use client'
 
-import { useState } from 'react'
+import { MouseEvent, useState } from 'react'
 import {
   Button,
   TextField,
   Alert,
+  FormControl,
+  InputLabel,
+  OutlinedInput,
+  InputAdornment,
+  IconButton,
 } from '@mui/material'
 import { useRouter } from 'next/navigation'
 import api from '@/utils/api'
 import Image from 'next/image'
 import styles from './login.module.scss'
+import { MdVisibility, MdVisibilityOff } from 'react-icons/md'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [erro, setErro] = useState('')
   const router = useRouter()
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show)
+  
+  const handleMousePassword = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+  }
 
   const login = async () => {
     setErro('')
@@ -61,6 +74,30 @@ export default function LoginPage() {
             onChange={(e) => setEmail(e.target.value)}
             type="email"
           />
+          <FormControl>
+            <InputLabel htmlFor="input-senha">Senha</InputLabel>
+            <OutlinedInput
+              id='input-senha'
+              type={showPassword ? 'text' : 'password'}
+              endAdornment={
+                <InputAdornment position='end'>
+                  <IconButton
+                    aria-label={
+                      showPassword ? 'Esconder a senha' : 'Exibir a senha'
+                    }
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMousePassword}
+                    onMouseUp={handleMousePassword}
+                    edge="end"
+                  >
+                    {showPassword ? <MdVisibilityOff /> : <MdVisibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              label="Senha"
+              onChange={(e) => setSenha(e.target.value)}
+            />
+          </FormControl>
           <TextField
             label="Senha"
             variant="outlined"
@@ -71,6 +108,9 @@ export default function LoginPage() {
           />
           <Button variant="contained" color="primary" onClick={login} sx={{ mt: 2 }}>
             Entrar
+          </Button>
+          <Button variant='text' color='primary' href='/esqueci-senha'>
+            Esqueci minha Senha
           </Button>
         </div>
       </div>

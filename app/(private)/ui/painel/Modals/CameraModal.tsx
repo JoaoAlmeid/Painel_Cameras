@@ -145,7 +145,6 @@ export default function ModalAddCamera({ open, onClose, onSuccess, cameraEdit }:
           margin="normal"
           value={formData.localizacao}
           onChange={handleChange}
-          required
           helperText="Cole uma URL que contenha a latitude e longitude (ex: maps.google.com/maps?q=-23.55,-46.63)"
         />
         <TextField
