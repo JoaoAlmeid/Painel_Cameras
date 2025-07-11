@@ -6,7 +6,7 @@ import { CircularProgress, Alert, Button } from '@mui/material'
 import api from '@/utils/api'
 import Hls from 'hls.js'
 import { isAxiosError } from 'axios'
-import styles from '../../../../styles/paginas/camera.module.scss'
+import styles from './page.module.scss'
 import { MdHome, MdReport } from "react-icons/md";
 import type { Camera } from '@/types/camera'
 import { gerarSlug } from '@/utils/gerarSlug'
