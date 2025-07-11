@@ -7,12 +7,11 @@ $transition-duration: 0.3s;
 .container {
   display: flex;
   height: 100vh;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .drawer {
   background-color: $cor-clara;
-  position: fixed;
   height: 100vh;
   color: $cor-primaria;
   overflow-x: hidden;
