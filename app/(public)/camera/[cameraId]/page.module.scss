@@ -1,5 +1,4 @@
 .container {
-    width: 100vw;
     height: max-content;
     display: flex;
     flex-direction: column;
@@ -38,7 +37,7 @@
         justify-content: center;
 
         .video {
-          width: 80%;
+          width: auto;
           height: 50vh;
           border-radius: 0.75rem;
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -70,6 +69,7 @@
             width: 95%; 
 
             .video {
+                width: 100%;
                 height: auto;
             }
         }
