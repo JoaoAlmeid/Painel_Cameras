@@ -7,23 +7,13 @@ import Link from 'next/link'
 import styles from './card.module.scss'
 import { Camera } from '@/types/camera'
 import { MdDelete, MdEdit, MdPowerSettingsNew, MdVisibility } from 'react-icons/md'
+import { gerarSlug } from '@/utils/gerarSlug'
 
 interface Props {
   camera: Camera
   onEdit: (cam: Camera) => void
   onDelete: (cam: Camera) => void
   onToggleAtivo: (cam: Camera) => void
-}
-
-function gerarSlug(nome: string): string {
-  return nome
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w-]+/g, '')
-    .replace(/--+/g, '-')
-    .replace(/^-+|-+$/g, '')
 }
 
 export default function CameraCard({ camera, onEdit, onDelete, onToggleAtivo }: Props) {

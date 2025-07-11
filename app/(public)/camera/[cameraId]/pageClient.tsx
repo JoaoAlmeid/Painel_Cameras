@@ -2,20 +2,22 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useParams } from 'next/navigation'
-import { Typography, CircularProgress, Alert } from '@mui/material'
+import { CircularProgress, Alert, Button } from '@mui/material'
 import api from '@/utils/api'
 import Hls from 'hls.js'
 import { isAxiosError } from 'axios'
-import styles from './page.module.scss'
+import styles from '../../../../styles/paginas/camera.module.scss'
+import { MdHome, MdReport } from "react-icons/md";
 import type { Camera } from '@/types/camera'
 import { gerarSlug } from '@/utils/gerarSlug'
 
-export default function CameraPagina() {
+export default function CameraPageClient() {
   const { cameraId } = useParams<{ cameraId: string }>()
   const [camera, setCamera] = useState<Camera | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const videoRef = useRef<HTMLVideoElement | null>(null)
+  const urlReport = process.env.REPORT_URL || 'https://ccomfm.com.br/contato/'
 
   useEffect(() => {
     const fetchCamera = async () => {
@@ -53,26 +55,35 @@ export default function CameraPagina() {
 
   if (loading) return <div className={styles.loader}><CircularProgress /></div>
   if (error) return <Alert severity="error" className={styles.alert}>{error}</Alert>
-  if (!camera) return <Typography>Câmera não encontrada.</Typography>
+  if (!camera) return <h5>Câmera não encontrada.</h5>
 
   return (
-    <div className={styles.container}>
-      <div className={styles.card}>
-        <Typography variant="h4" className={styles.title}>{camera.nome}</Typography>
-        <Typography variant="body1" className={styles.status}>
-          Status: <span className={camera.ativo ? styles.active : styles.inactive}>
-            {camera.ativo ? 'Ativa' : 'Inativa'}
-          </span>
-        </Typography>
-
-        <video
-          ref={videoRef}
-          controls
-          autoPlay
-          muted
-          className={styles.video}
-        />
-      </div>
-    </div>
+    <section className={styles.container}>
+        <div className={styles.headerContainer}>
+            <h2>{camera.nome}</h2>
+            <span className={styles.status}>Status: 
+                <span className={camera.ativo ? styles.active : styles.inactive}>
+                    {camera.ativo ? 'Ativa' : 'Inativa'}
+                </span>
+            </span>
+        </div>
+        <div className={styles.videoContainer}>
+            <video
+                ref={videoRef}
+                controls
+                autoPlay
+                muted
+                className={styles.video}
+            />
+        </div>
+        <div className={styles.footerContainer}>
+          <Button href='/' variant='contained' startIcon={<MdHome color='white'/>}>
+            Voltar ao Inicio
+          </Button>
+          <Button href={urlReport} variant='contained' startIcon={<MdReport color='white'/>}>
+            Reportar Erro
+          </Button>
+        </div>
+    </section>
   )
 }

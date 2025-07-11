@@ -1,9 +1,9 @@
 import "../../styles/globals.scss";
 import 'leaflet/dist/leaflet.css'
+import type { Metadata } from "next";
 import Header from "./(componentes)/ui/header";
 import Footer from "./(componentes)/ui/footer";
 import { Roboto, Poppins } from "next/font/google";
-import { Metadata } from "next";
 
 const roboto = Roboto({
   weight: ['300', '500', '600', '700'],
@@ -18,7 +18,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Cameras C-Com FM - 102,7 Além Paraiba",
+  title: "Sistema de Câmeras | C-COM FM",
   description: "Sistema de câmera C-Com FM - com mapa de cameras e visualização ao-vivo",
 }
 

@@ -7,17 +7,7 @@ import Link from 'next/link'
 import styles from './card.module.scss'
 import type { Camera } from '@/types/camera'
 import { MdVisibility } from 'react-icons/md'
-
-function gerarSlug(nome: string): string {
-  return nome
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w-]+/g, '')
-    .replace(/--+/g, '-')
-    .replace(/^-+|-+$/g, '')
-}
+import { gerarSlug } from '@/utils/gerarSlug'
 
 export default function CardCamClient({ camera } : {camera : Camera}) {
   const videoRef = useRef<HTMLVideoElement | null>(null)

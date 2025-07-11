@@ -3,7 +3,7 @@ export interface Camera {
   nome: string
   url: string
   ativo: boolean
-  localizacao: string
+  localizacao?: string
   latitude: number
   longitude: number
 }

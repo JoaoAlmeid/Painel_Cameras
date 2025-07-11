@@ -16,7 +16,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Recuperar Senha | Câmeras C-Com",
+  title: "Recuperar Senha | Câmeras C-COM FM",
   description: "Recuperar acesso ao painel de câmeras da C-Com FM.",
 };
 
