@@ -1,10 +1,9 @@
 import "../../styles/globals.scss";
 import 'leaflet/dist/leaflet.css'
-import Head from "next/head";
 import Header from "./(componentes)/ui/header";
 import Footer from "./(componentes)/ui/footer";
-import styles from './page.module.scss'
 import { Roboto, Poppins } from "next/font/google";
+import { Metadata } from "next";
 
 const roboto = Roboto({
   weight: ['300', '500', '600', '700'],
@@ -18,6 +17,11 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
+export const metadata: Metadata = {
+  title: "Cameras C-Com FM - 102,7 Além Paraiba",
+  description: "Sistema de câmera C-Com FM - com mapa de cameras e visualização ao-vivo",
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,16 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <Head>
-        <title>Cameras C-Com FM - 102,7 Além Paraiba</title>
-        <meta name="description" content="Sistema de câmera C-Com FM - com mapa de cameras e visualização ao-vivo" />
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-      </Head>
-      <body
-        className={`${roboto.variable} ${poppins.variable} antialiased`}
-        >
+      <body className={`${roboto.variable} ${poppins.variable} antialiased`}>
         <Header />
-        <main className={styles.mainContainer}>
+        <main>
           {children}
         </main>
         <Footer />

@@ -7,8 +7,7 @@ import api from '@/utils/api'
 import Hls from 'hls.js'
 import { isAxiosError } from 'axios'
 import styles from '../../../../styles/paginas/camera.module.scss'
-import Link from 'next/link'
-import { MdReport } from "react-icons/md";
+import { MdHome, MdReport } from "react-icons/md";
 
 interface Camera {
   cameraId: string
@@ -78,21 +77,16 @@ export default function CameraPagina() {
   if (!camera) return <h5>Câmera não encontrada.</h5>
 
   return (
-    <div className={styles.container}>
-        <div className={styles.columInfo}>
+    <section className={styles.container}>
+        <div className={styles.headerContainer}>
             <h2>{camera.nome}</h2>
             <span className={styles.status}>Status: 
                 <span className={camera.ativo ? styles.active : styles.inactive}>
                     {camera.ativo ? 'Ativa' : 'Inativa'}
                 </span>
             </span>
-            <Link href={urlReport}>
-                <Button variant='contained' startIcon={<MdReport color='white'/>}>
-                    Reportar Erro
-                </Button>
-            </Link>
         </div>
-        <div className={styles.columVideo}>
+        <div className={styles.videoContainer}>
             <video
                 ref={videoRef}
                 controls
@@ -101,6 +95,14 @@ export default function CameraPagina() {
                 className={styles.video}
             />
         </div>
-    </div>
+        <div className={styles.footerContainer}>
+          <Button href='/' variant='contained' startIcon={<MdHome color='white'/>}>
+            Voltar ao Inicio
+          </Button>
+          <Button href={urlReport} variant='contained' startIcon={<MdReport color='white'/>}>
+            Reportar Erro
+          </Button>
+        </div>
+    </section>
   )
 }
