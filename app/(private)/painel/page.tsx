@@ -44,7 +44,7 @@ export default function PainelPage() {
 
   return (
     <div className={styles.container}>
-      <h2>Painel de Monitoramento</h2>
+      <h3>Painel de Monitoramento</h3>
 
       {loading ? (
         <CircularProgress />
@@ -84,7 +84,7 @@ export default function PainelPage() {
             </Grid>
           </Grid>
 
-          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+          <div className={styles.sectionMapCam}>
             {/* MAPA */}
             <Grid size={{ xs: 2, sm: 4, md: 8 }}>
               <div>
@@ -104,7 +104,7 @@ export default function PainelPage() {
                 <Button variant='outlined' href='/painel/cameras'>Ver Todas Cameras</Button>
               </div>
             </Grid>
-          </Grid>
+          </div>
         </div>
       )}
     </div>
