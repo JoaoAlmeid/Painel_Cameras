@@ -1,13 +1,8 @@
-import api from "./api"
+import { cookies } from "next/headers"
+import { redirect } from "next/navigation"
 
 export async function logout() {
-  try {
-    await api.post('/admin/auth/sair')
-  } catch (err) {
-    console.error('Erro ao sair:', err)
-  } finally {
-    if (typeof window !== 'undefined') {
-      window.location.href = '/login'
-    }
-  }
+  const cookieStore = await cookies()
+  cookieStore.delete('token')
+  redirect("/")
 }
