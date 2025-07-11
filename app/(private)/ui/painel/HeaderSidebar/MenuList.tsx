@@ -36,14 +36,16 @@ export default function ListMenu({ open }: DrawerMenuProps) {
                     <span className={`${styles.label} ${open ? styles.show : styles.hide}`}>{item.label}</span>
                 </Link>
             ))}
-                <Link 
-                    href='#'
+                <button 
                     onClick={handleLogout}
-                    className={`${styles.menuItem} ${open ? styles.show : styles.hide}`}
+                    className={`
+                        ${styles.menuItem} 
+                        ${open ? styles.show : styles.hide}
+                    `}
                 >
                     <span className={styles.icon}><FaSignOutAlt /></span>
                     <span className={`${styles.label} ${open ? styles.show : styles.hide}`}>Sair</span>
-                </Link>
+                </button>
         </nav>
     )
 }
