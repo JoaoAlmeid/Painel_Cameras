@@ -18,7 +18,7 @@ export interface ListaCamerasResponse {
 export interface CameraFormData {
   nome: string
   url: string
-  localizacao: string
+  localizacao?: string
   latitude: string
   longitude: string
 }
