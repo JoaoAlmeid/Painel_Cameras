@@ -36,7 +36,8 @@ export default function ListMenu({ open }: DrawerMenuProps) {
                     <span className={`${styles.label} ${open ? styles.show : styles.hide}`}>{item.label}</span>
                 </Link>
             ))}
-                <button 
+                <Link 
+                    href='/'
                     onClick={handleLogout}
                     className={`
                         ${styles.menuItem} 
@@ -45,7 +46,7 @@ export default function ListMenu({ open }: DrawerMenuProps) {
                 >
                     <span className={styles.icon}><FaSignOutAlt /></span>
                     <span className={`${styles.label} ${open ? styles.show : styles.hide}`}>Sair</span>
-                </button>
+                </Link>
         </nav>
     )
 }
