@@ -37,7 +37,7 @@ export default function ListMenu({ open }: DrawerMenuProps) {
                 </Link>
             ))}
                 <Link 
-                    href='/sair'
+                    href='#'
                     onClick={handleLogout}
                     className={`${styles.menuItem} ${open ? styles.show : styles.hide}`}
                 >
