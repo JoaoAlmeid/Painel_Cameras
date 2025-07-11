@@ -97,10 +97,12 @@ export default function PainelPage() {
 
             {/* LISTA */}
             <Grid size={{ xs: 2, sm: 4, md: 4 }}>
-              <h6>Lista de Câmeras</h6>
+              <h6>Lista de Câmeras - Ativas</h6>
               <div className={styles.lista}>
                 {Array.isArray(cameras) &&
-                  cameras.map((cam) => <CameraLista key={cam.cameraId} camera={cam} />)}
+                  cameras
+                    .filter(cam => cam.ativo)
+                    .map((cam) => <CameraLista key={cam.cameraId} camera={cam} />)}
                 <Button variant='outlined' href='/painel/cameras'>Ver Todas Cameras</Button>
               </div>
             </Grid>

@@ -57,6 +57,9 @@
 }
 
 @media (max-width: 65em) {
+  .container {
+    h3 { font-size: 1.3em; }
+  }
   .sectionMapCam {
     flex-direction: column-reverse;
     gap: 2rem;
