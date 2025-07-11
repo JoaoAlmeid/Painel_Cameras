@@ -94,9 +94,9 @@ export default function CamerasPageClient() {
         cameraEdit={editCamera}
       />
 
-      <Grid container spacing={2}>
+      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {cameras.map((cam) => (
-          <Grid  key={cam.cameraId} size={4}>
+          <Grid  key={cam.cameraId} size={{ xs: 2, sm: 4, md: 4 }}>
             <CameraCard
               camera={cam}
               onEdit={setEditCamera}
